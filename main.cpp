@@ -9,6 +9,7 @@
 #include "Algorithm.h"
 using namespace std;
 
+//PROTOTYPES
 void checkKeyboard ( bool &go );
 void reset();
 void *startThread ( void *threadid );

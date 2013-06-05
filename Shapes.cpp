@@ -297,7 +297,7 @@ void Shapes::checkRules(){
 
 GLuint Shapes::loadBMP ( string imagepath )
 {
-    imagepath="/home/harjot/NetBeansProjects/Final/dist/Debug/GNU-Linux-x86/"+imagepath;
+    //imagepath="/home/harjot/NetBeansProjects/Final/dist/Debug/GNU-Linux-x86/"+imagepath;
     //When you create your texture files, please specify
     //type: BMP
     //color depth: 24-bit

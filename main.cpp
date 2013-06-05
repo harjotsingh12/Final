@@ -100,7 +100,7 @@ int main(int argc, char** argv) {
                 if(snd->screen!=1){
                     snd->screen=1;
                     snd->loop=true;
-                    snd->filename="/home/harjot/NetBeansProjects/Final/Menu.mp3";                    
+                    snd->filename="Menu.mp3";                    
                     
                     pthread_create ( &sndThread, NULL, playSound, ( void * ) NULL); 
                 }
@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
                 if(snd->screen!=3){
                     snd->screen=3;
                     snd->loop=true;
-                    snd->filename="/home/harjot/NetBeansProjects/Final/Last.mp3";                    
+                    snd->filename="Last.mp3";                    
                     
                     pthread_create ( &sndThread, NULL, playSound, ( void * ) NULL); 
                 }
@@ -296,9 +296,9 @@ void GLFWCALL mouse_click(int button, int action){
         clientsConn=ai.getClientsConnected(shapes, serverLoc, clientLoc);         
         
         if(clientsConn==totClientsConn){
-            snd->filename="/home/harjot/NetBeansProjects/Final/Beep1.mp3";    
+            snd->filename="Beep1.mp3";    
         }else{
-            snd->filename="/home/harjot/NetBeansProjects/Final/Beep2.mp3"; 
+            snd->filename="Beep2.mp3"; 
         }
         pthread_create ( &sndThread, NULL, playSound, ( void * ) NULL); 
         totClientsConn=clientsConn;
@@ -414,7 +414,7 @@ int getCellNum(int gridRowNum, int gridColNum){
 /////////////////////////////////////
 GLuint loadBMP ( string imagepath )
 {
-    imagepath="/home/harjot/NetBeansProjects/Final/dist/Debug/GNU-Linux-x86/"+imagepath;
+    //imagepath="/home/harjot/NetBeansProjects/Final/dist/Debug/GNU-Linux-x86/"+imagepath;
     //When you create your texture files, please specify
     //type: BMP
     //color depth: 24-bit

@@ -108,6 +108,51 @@ void level1(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vect
     
 }
 
+void level1_13(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 1));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 2));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 3));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 4));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 5));
+    shapes.push_back(new Shapes('S', "S_light_2.bmp", 2, 6));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 7));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 8));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 9));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 10));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 11));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 12));
+
+    clientLoc.push_back(3);
+    clientLoc.push_back(10);
+    
+    serverLoc.push_back(6);
+
+    ai.getClientsConnected(shapes, serverLoc, clientLoc);
+
+}
+
+void level1_14(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 1));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 2));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 3));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 4));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 5));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 6));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 7));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 8));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 9));
+    shapes.push_back(new Shapes('l', L_light, L_dark, 0, 10));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 11));
+    shapes.push_back(new Shapes('S', "S_light_2.bmp", 2, 12));
+
+    clientLoc.push_back(2);
+    
+    serverLoc.push_back(12);
+
+    ai.getClientsConnected(shapes, serverLoc, clientLoc);
+
+}
+
 void level2(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
     shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
     shapes.push_back(new Shapes('L', L_light, L_dark, 0, 2));

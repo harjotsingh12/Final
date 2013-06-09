@@ -60,6 +60,53 @@ void loadImages(){
     C_dark.push_back("C_dark_3.bmp");
 }
     
+void level1_19(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 1));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 2));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 3));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 4));
+    shapes.push_back(new Shapes('S', "S_light_11.bmp", 11, 5));  // Server
+    shapes.push_back(new Shapes('L', L_light, L_dark, 2, 6));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 7));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 8));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 9));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 10));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 3, 11));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 12));
+
+    clientLoc.push_back(3);
+    clientLoc.push_back(4);
+    clientLoc.push_back(11);
+    clientLoc.push_back(12);
+
+    serverLoc.push_back(5);
+
+    ai.userWon(shapes, serverLoc, clientLoc);
+} 
+void level1_20(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 2));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 3));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 4));
+    shapes.push_back(new Shapes('P', P_light, P_dark, 0, 5));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 3, 6));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 7));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 2, 8));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 9));
+    shapes.push_back(new Shapes('S', "S_light_4.bmp", 4, 10));  // SERVER
+    shapes.push_back(new Shapes('I', I_light, I_dark, 1, 11));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 3, 12));
+
+    clientLoc.push_back(1);
+    clientLoc.push_back(2);
+    clientLoc.push_back(3);
+    clientLoc.push_back(9);
+    clientLoc.push_back(12);
+
+    serverLoc.push_back(10);
+
+    ai.userWon(shapes, serverLoc, clientLoc);
+}    
 void level1(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
     shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
     shapes.push_back(new Shapes('L', L_light, L_dark, 0, 2));
@@ -180,6 +227,53 @@ void level2(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vect
     ai.getClientsConnected(shapes, serverLoc, clientLoc); 
 }
 
+void level2_8(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
+    shapes.push_back(new Shapes('C', C_light, C_dark, 1, 1));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 2));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 3));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 4));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 3, 5));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 6));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 7));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 3, 8));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 1, 9));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 10));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 11));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 12));
+    shapes.push_back(new Shapes('S', "S_light_14.bmp", 14, 13));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 2, 14));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 15));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 16));
+    shapes.push_back(new Shapes('P', P_light, P_dark, 0, 17));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 18));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 2, 19));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 20));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 21));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 22));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 23));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 24));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 25));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 26));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 1, 27));
+    shapes.push_back(new Shapes('T', T_light, T_dark, 0, 28));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 3, 29));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 30));
+
+    clientLoc.push_back(1);
+    clientLoc.push_back(3);
+    clientLoc.push_back(5);
+    clientLoc.push_back(11);
+    clientLoc.push_back(15);
+    clientLoc.push_back(24);
+    clientLoc.push_back(26);
+    clientLoc.push_back(27);
+    clientLoc.push_back(29);
+    clientLoc.push_back(30);
+
+    serverLoc.push_back(13);
+
+    ai.userWon(shapes, serverLoc, clientLoc);
+}
 
 void loadLevel(int levelNum, Algorithm &ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc, int &leftDistance, int &btmDistance, int &cellDim, int &rows, int &cols){
     switch(levelNum){

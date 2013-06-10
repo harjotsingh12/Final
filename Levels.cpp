@@ -83,7 +83,8 @@ void level1_19(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, v
 
     serverLoc.push_back(5);
 
-    ai.userWon(shapes, serverLoc, clientLoc);
+    //ai.userWon(shapes, serverLoc, clientLoc);
+    ai.getClientsConnected(shapes, serverLoc, clientLoc);              
 } 
 void level1_20(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){
     shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
@@ -107,7 +108,8 @@ void level1_20(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, v
 
     serverLoc.push_back(10);
 
-    ai.userWon(shapes, serverLoc, clientLoc);
+    //ai.userWon(shapes, serverLoc, clientLoc);
+    ai.getClientsConnected(shapes, serverLoc, clientLoc);              
 }    
 void level1(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
     shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
@@ -274,7 +276,8 @@ void level2_8(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, ve
 
     serverLoc.push_back(13);
 
-    ai.userWon(shapes, serverLoc, clientLoc);
+    //ai.userWon(shapes, serverLoc, clientLoc);
+    ai.getClientsConnected(shapes, serverLoc, clientLoc); 
 }
 
 void loadLevel(int levelNum, Algorithm &ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc, int &leftDistance, int &btmDistance, int &cellDim, int &rows, int &cols){

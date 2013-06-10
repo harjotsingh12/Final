@@ -88,7 +88,7 @@ void level1(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vect
 }
 
 void level2(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
-     shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
     shapes.push_back(new Shapes('T', T_light, T_dark, 0, 2));
     shapes.push_back(new Shapes('T', T_light, T_dark, 3, 3));
     shapes.push_back(new Shapes('C', C_light, C_dark, 2, 4));

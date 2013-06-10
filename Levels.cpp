@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <vector>
 #include "Algorithm.h"
 #include "Shapes.h"
@@ -285,7 +287,9 @@ void loadLevel(int levelNum, Algorithm &ai, vector<Shapes *> &shapes, vector<int
             cols=5;
             ai.setRowsCols(rows, cols);
             
-            level1(ai, shapes, clientLoc, serverLoc );
+            //randomLevelEasy(ai, shapes, clientLoc, serverLoc );
+            
+	    level1(ai, shapes, clientLoc, serverLoc );
             break;
         case 2:
             
@@ -310,3 +314,31 @@ void loadLevel(int levelNum, Algorithm &ai, vector<Shapes *> &shapes, vector<int
     }
 
 }
+/*
+void randomLevelEasy(Algorithm &ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc){
+    srand(time(NULL));
+
+    switch(rand() % 20 ){ 		// This should be changed to how many different grids we have of the Easy option.
+	case 0 : level1_1(ai, shapes, clientLoc, serverLoc );break;
+	case 1 : level1_2(ai, shapes, clientLoc, serverLoc );break;
+	case 2 : level1_3(ai, shapes, clientLoc, serverLoc );break;
+	case 3 : level1_4(ai, shapes, clientLoc, serverLoc );break;
+	case 4 : level1_5(ai, shapes, clientLoc, serverLoc );break;
+	case 5 : level1_6(ai, shapes, clientLoc, serverLoc );break;
+	case 6 : level1_7(ai, shapes, clientLoc, serverLoc );break;
+	case 7 : level1_8(ai, shapes, clientLoc, serverLoc );break;
+	case 8 : level1_9(ai, shapes, clientLoc, serverLoc );break;
+	case 9 : level1_10(ai, shapes, clientLoc, serverLoc );break;
+	case 10 : level1_11(ai, shapes, clientLoc, serverLoc );break;
+	case 11 : level1_12(ai, shapes, clientLoc, serverLoc );break;
+	case 12 : level1_13(ai, shapes, clientLoc, serverLoc );break;
+	case 13 : level1_14(ai, shapes, clientLoc, serverLoc );break;
+	case 14 : level1_15(ai, shapes, clientLoc, serverLoc );break;
+	case 15 : level1_16(ai, shapes, clientLoc, serverLoc );break;
+	case 16 : level1_17(ai, shapes, clientLoc, serverLoc );break;
+	case 17 : level1_18(ai, shapes, clientLoc, serverLoc );break;
+	case 18 : level1_19(ai, shapes, clientLoc, serverLoc );break;
+	case 19 : level1_20(ai, shapes, clientLoc, serverLoc );break;
+    }
+}
+*/

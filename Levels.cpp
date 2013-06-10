@@ -64,17 +64,17 @@ void loadImages(){
     
 
 void level1(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
-    shapes.push_back(new Shapes('C', C_light, C_dark, 1, 1));
-    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 2));
-    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 3));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 1));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 2));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 0, 3));
     shapes.push_back(new Shapes('S', "S_light_0.bmp", 0, 4)); //SERVER
     shapes.push_back(new Shapes('T', T_light, T_dark, 3, 5));
     shapes.push_back(new Shapes('I', I_light, I_dark, 0, 6));
     shapes.push_back(new Shapes('L', L_light, L_dark, 0, 7));
     shapes.push_back(new Shapes('P', P_light, P_dark, 0, 8));
-    shapes.push_back(new Shapes('L', L_light, L_dark, 2, 9));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 9));
     shapes.push_back(new Shapes('C', C_light, C_dark, 0, 10));
-    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 11));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 0, 11));
     shapes.push_back(new Shapes('C', C_light, C_dark, 3, 12));
 
     clientLoc.push_back(1);

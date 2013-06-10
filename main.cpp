@@ -169,11 +169,16 @@ void checkKeyboard ( bool &go )
         
     }else if ( glfwGetKey ( '2' ) == GLFW_PRESS && screen->number == 1 )
     {
-        //screen->number = 2;        
+       reset ();
+       loadLevel(2, ai, shapes, clientLoc, serverLoc, leftDistance, btmDistance, cellDim, rows, cols);
+       buildGrid();
+       screen->number = 2;      
         
     }else if ( glfwGetKey ( '3' ) == GLFW_PRESS && screen->number == 1 )
     {
-        //screen->number = 2;  
+        loadLevel(3, ai, shapes, clientLoc, serverLoc, leftDistance, btmDistance, cellDim, rows, cols);
+        buildGrid();
+        screen->number = 2;   
         
     }else if ( glfwGetKey ( '4' ) == GLFW_PRESS && screen->number == 1 )
     {
@@ -181,9 +186,7 @@ void checkKeyboard ( bool &go )
        
     }else if ( glfwGetKey ( '5' ) == GLFW_PRESS && screen->number == 1 )
     {
-        loadLevel(5, ai, shapes, clientLoc, serverLoc, leftDistance, btmDistance, cellDim, rows, cols);
-        buildGrid();
-        screen->number = 2;  
+        //
         
     }else if ( glfwGetKey ( '6' ) == GLFW_PRESS && screen->number == 1 )
     {

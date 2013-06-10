@@ -119,15 +119,15 @@ void level2(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vect
     shapes.push_back(new Shapes('T', T_light, T_dark, 0, 29));
     shapes.push_back(new Shapes('L', L_light, L_dark, 0, 30));
 
-    clientLoc.push_back(1);
-    clientLoc.push_back(4);
-    clientLoc.push_back(5);
-    clientLoc.push_back(6);
-    clientLoc.push_back(9);
-    clientLoc.push_back(14);
-    clientLoc.push_back(18);
-    clientLoc.push_back(23);
-    clientLoc.push_back(24);
+    clientLoc.push_back(1);//client 1
+    clientLoc.push_back(4); //client 2
+    clientLoc.push_back(5); //client 3
+    clientLoc.push_back(6); //client 4
+    clientLoc.push_back(9); //client 5
+    clientLoc.push_back(14); //cleint 6
+    clientLoc.push_back(18); //cleint 7
+    clientLoc.push_back(23); //cleint 8
+    clientLoc.push_back(24); //cleint 9
     
     serverLoc.push_back(21);
     

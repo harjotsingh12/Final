@@ -6,6 +6,8 @@ Algorithm::Algorithm(){
     columns=0;
 }
 
+
+// rows and columns of the game
 void Algorithm::setRowsCols(int rw, int col){
     rows=rw;
     columns=col;

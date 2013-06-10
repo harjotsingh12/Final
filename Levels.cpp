@@ -64,27 +64,27 @@ void loadImages(){
     
 
 void level1(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    
-    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 1));
-    shapes.push_back(new Shapes('C', C_light, C_dark, 1, 2));
-    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 3));
-    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 4));
-    shapes.push_back(new Shapes('I', I_light, I_dark, 1, 5));
-    shapes.push_back(new Shapes('T', T_light, T_dark, 3, 6));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 1, 1));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 1, 2));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 2, 3));
+    shapes.push_back(new Shapes('S', "S_light_0.bmp", 0, 4)); //SERVER
+    shapes.push_back(new Shapes('T', T_light, T_dark, 3, 5));
+    shapes.push_back(new Shapes('I', I_light, I_dark, 0, 6));
     shapes.push_back(new Shapes('L', L_light, L_dark, 0, 7));
-    shapes.push_back(new Shapes('I', I_light, I_dark, 1, 8));
-    shapes.push_back(new Shapes('S', "S_light_12.bmp",12, 9)); //SERVER
+    shapes.push_back(new Shapes('P', P_light, P_dark, 0, 8));
+    shapes.push_back(new Shapes('L', L_light, L_dark, 2, 9));
     shapes.push_back(new Shapes('C', C_light, C_dark, 0, 10));
-    shapes.push_back(new Shapes('C', C_light, C_dark, 1, 11));
-    shapes.push_back(new Shapes('L', L_light, L_dark, 2, 12));
-        
+    shapes.push_back(new Shapes('L', L_light, L_dark, 3, 11));
+    shapes.push_back(new Shapes('C', C_light, C_dark, 3, 12));
+
     clientLoc.push_back(1);
-    clientLoc.push_back(2);
+    clientLoc.push_back(3);
     clientLoc.push_back(10);
-    clientLoc.push_back(11);
-       
-    serverLoc.push_back(9);
-    
-    ai.getClientsConnected(shapes, serverLoc, clientLoc); 
+    clientLoc.push_back(12);
+
+    serverLoc.push_back(4);
+
+    ai.getClientsConnected(shapes, serverLoc, clientLoc);
 }
 
 void level2(Algorithm ai, vector<Shapes *> &shapes, vector<int> &clientLoc, vector<int> &serverLoc ){    

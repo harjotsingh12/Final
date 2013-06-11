@@ -6,23 +6,27 @@
 #include <algorithm>
 using namespace std;
 
-class Algorithm{
+class Algorithm {
 public:
     Algorithm();
-    void setRowsCols(int rw, int col);
+    
+    void setRowsCols ( int rw, int col );
+    
     int getRowNum ( int number );
-    int getClientsConnected ( vector<Shapes *> &shapes, vector<int> serverLoc, vector<int> clientLoc);
+    
+    int getClientsConnected ( vector<Shapes *> &shapes, vector<int> serverLoc,
+                              vector<int> clientLoc );
     
 private:
     int rows, columns;
     
-    void findPath ( int number, vector<Shapes *> &shapes, vector<int> &clientList, vector<int> &path, vector<int> discardLst);
-    bool numberExists ( vector<int> lst, int number);
-    int numClientsConnected ( vector<int> lst1, vector<int> lst2);
-
+    void findPath ( int number, vector<Shapes *> &shapes, 
+                    vector<int> &clientList, vector<int> &path, 
+                    vector<int> discardLst );
     
+    bool numberExists ( vector<int> lst, int number );
+    
+    int numClientsConnected ( vector<int> lst1, vector<int> lst2 );    
 };
-
-
 #endif	
 

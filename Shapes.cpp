@@ -1,294 +1,315 @@
 #include "Shapes.h"
 using namespace std;
 
-Shapes::Shapes(char shName, string fileNameLight, int imgPos, int cellpos){
-    shapeName=shName;
-    currImagePos=imgPos;
-    cellPos=cellpos;
-    isInWinPath=false;
+Shapes::Shapes ( char shName, string fileNameLight, int imgPos, int cellpos )
+{
+    shapeName = shName;
+    currImagePos = imgPos;
+    cellPos = cellpos;
+    isInWinPath = false;
     
-    picFilesLight.push_back(loadBMP(fileNameLight)); 
+    picFilesLight.push_back ( loadBMP ( fileNameLight ) ); 
     
     checkRules();
 }
 
-Shapes::Shapes(char shName, vector<string> fileNamesLight, vector<string> fileNamesDark, int imgPos, int cellpos){
-    shapeName=shName;
-    currImagePos=imgPos;
-    cellPos=cellpos;
-    isInWinPath=false;
+Shapes::Shapes ( char shName, vector<string> fileNamesLight,
+        vector<string> fileNamesDark, int imgPos, int cellpos )
+{
+    shapeName = shName;
+    currImagePos = imgPos;
+    cellPos = cellpos;
+    isInWinPath = false;
     
-    for(int n=0; n<fileNamesLight.size(); n++){
-        picFilesLight.push_back(loadBMP(fileNamesLight.at(n)));
-        picFilesDark.push_back(loadBMP(fileNamesDark.at(n)));
+    for ( int n = 0; n < fileNamesLight.size(); n++ )
+    {
+        picFilesLight.push_back ( loadBMP ( fileNamesLight.at ( n ) ) );
+        picFilesDark.push_back ( loadBMP ( fileNamesDark.at ( n ) ) );
     }
     
     checkRules();
 }
 
-Shapes::Shapes(char shName, string fileNameLight, string fileNameDark, int imgPos, int cellpos){
-    shapeName=shName;
-    currImagePos=imgPos;
-    cellPos=cellpos;
-    isInWinPath=false;
+Shapes::Shapes ( char shName, string fileNameLight, string fileNameDark, 
+        int imgPos, int cellpos )
+{
+    shapeName = shName;
+    currImagePos = imgPos;
+    cellPos = cellpos;
+    isInWinPath = false;
     
-    picFilesLight.push_back(loadBMP(fileNameLight));
-    picFilesDark.push_back(loadBMP(fileNameDark));
+    picFilesLight.push_back ( loadBMP ( fileNameLight ) );
+    picFilesDark.push_back ( loadBMP ( fileNameDark ) );
     
     checkRules();
 }
 
-void Shapes::rotate(){
-    if(shapeName=='S' || shapeName=='P')return;
+void Shapes::rotate()
+{
+    if ( shapeName == 'S' || shapeName == 'P' ) return;
     
-    if(currImagePos+1>=picFilesLight.size()){
-        currImagePos=0;
-    }else{
+    if ( currImagePos + 1 >= picFilesLight.size() )
+    {
+        currImagePos = 0;
+    }else
+    {
         currImagePos++;
     }
     
     checkRules();
 }
 
-GLuint Shapes::getImage(){
-    if(shapeName=='S'){
-        return picFilesLight.at(0);
-    }else if(isInWinPath){
-        return picFilesLight.at(currImagePos);
-    }else{
-        return picFilesDark.at(currImagePos);
+GLuint Shapes::getImage()
+{
+    if ( shapeName == 'S' )
+    {
+        return picFilesLight.at ( 0 );
+        
+    }else if ( isInWinPath )
+    {
+        return picFilesLight.at ( currImagePos );
+        
+    }else
+    {
+        return picFilesDark.at ( currImagePos );
     }
 }
 
-////////////////////////////////////////////////////
-void Shapes::checkRules(){
-    switch(shapeName){
+void Shapes::checkRules()
+{
+    switch ( shapeName )
+    {
         case 'L':
-            switch(currImagePos){
+            switch ( currImagePos )
+            {
                 case 0:
-                    left=false;
-                    right=true;
-                    up=true;
-                    bottom=false;
+                    left = false;
+                    right = true;
+                    up = true;
+                    bottom = false;
                     break;
                     
                 case 1:
-                    left=true;
-                    right=false;
-                    up=true;
-                    bottom=false;
+                    left = true;
+                    right = false;
+                    up = true;
+                    bottom = false;
                     break;
                     
                 case 2:
-                    left=true;
-                    right=false;
-                    up=false;
-                    bottom=true;
+                    left = true;
+                    right = false;
+                    up = false;
+                    bottom = true;
                     break; 
                     
                 case 3:
-                    left=false;
-                    right=true;
-                    up=false;
-                    bottom=true;
+                    left = false;
+                    right = true;
+                    up = false;
+                    bottom = true;
                     break;     
             }
             break;
             
         case 'I':
-            switch(currImagePos){
+            switch ( currImagePos )
+            {
                 case 0:
-                    left=false;
-                    right=false;
-                    up=true;
-                    bottom=true;
+                    left = false;
+                    right = false;
+                    up = true;
+                    bottom = true;
                     break;
                     
                 case 1:
-                    left=true;
-                    right=true;
-                    up=false;
-                    bottom=false;
+                    left = true;
+                    right = true;
+                    up = false;
+                    bottom = false;
                     break;
             }
             break;
             
         case 'T':
-            switch(currImagePos){
+            switch ( currImagePos )
+            {
                 case 0:
-                    left=true;
-                    right=true;
-                    up=false;
-                    bottom=true;
+                    left = true;
+                    right = true;
+                    up = false;
+                    bottom = true;
                     break;
                     
                 case 1:
-                    left=false;
-                    right=true;
-                    up=true;
-                    bottom=true;
+                    left = false;
+                    right = true;
+                    up = true;
+                    bottom = true;
                     break;
                     
                 case 2:
-                    left=true;
-                    right=true;
-                    up=true;
-                    bottom=false;
+                    left = true;
+                    right = true;
+                    up = true;
+                    bottom = false;
                     break; 
                     
                 case 3:
-                    left=true;
-                    right=false;
-                    up=true;
-                    bottom=true;
+                    left = true;
+                    right = false;
+                    up = true;
+                    bottom = true;
                     break;     
             }
             break;
             
         case 'P':
-            left=true;
-            right=true;
-            up=true;
-            bottom=true;
+            left = true;
+            right = true;
+            up = true;
+            bottom = true;
             break;
             
         case 'C':
-            switch(currImagePos){
+            switch ( currImagePos )
+            {
                 case 0:
-                    left=false;
-                    right=false;
-                    up=false;
-                    bottom=true;
+                    left = false;
+                    right = false;
+                    up = false;
+                    bottom = true;
                     break;
                     
                 case 1:
-                    left=false;
-                    right=true;
-                    up=false;
-                    bottom=false;
+                    left = false;
+                    right = true;
+                    up = false;
+                    bottom = false;
                     break;
                     
                 case 2:
-                    left=false;
-                    right=false;
-                    up=true;
-                    bottom=false;
+                    left = false;
+                    right = false;
+                    up = true;
+                    bottom = false;
                     break; 
                     
                 case 3:
-                    left=true;
-                    right=false;
-                    up=false;
-                    bottom=false;
+                    left = true;
+                    right = false;
+                    up = false;
+                    bottom = false;
                     break;     
             }
             break;
             
         case 'S':
-            switch(currImagePos){
+            switch ( currImagePos )
+            {
                 case 0:
-                    left=false;
-                    right=true;
-                    up=false;
-                    bottom=false;
+                    left = false;
+                    right = true;
+                    up = false;
+                    bottom = false;
                     break;
                     
                 case 1:
-                    left=false;
-                    right=false;
-                    up=true;
-                    bottom=false;
+                    left = false;
+                    right = false;
+                    up = true;
+                    bottom = false;
                     break;
                     
                 case 2:
-                    left=false;
-                    right=true;
-                    up=false;
-                    bottom=false;
+                    left = false;
+                    right = true;
+                    up = false;
+                    bottom = false;
                     break; 
                     
                 case 3:
-                    left=false;
-                    right=false;
-                    up=false;
-                    bottom=true;
+                    left = false;
+                    right = false;
+                    up = false;
+                    bottom = true;
                     break;   
                     
                 case 4:
-                    left=false;
-                    right=true;
-                    up=false;
-                    bottom=true;
+                    left = false;
+                    right = true;
+                    up = false;
+                    bottom = true;
                     break;
                     
                 case 5:
-                    left=true;
-                    right=true;
-                    up=false;
-                    bottom=false;
+                    left = true;
+                    right = true;
+                    up = false;
+                    bottom = false;
                     break;
                     
                 case 6:
-                    left=false;
-                    right=true;
-                    up=true;
-                    bottom=false;
+                    left = false;
+                    right = true;
+                    up = true;
+                    bottom = false;
                     break; 
                     
                 case 7:
-                    left=false;
-                    right=false;
-                    up=true;
-                    bottom=true;
+                    left = false;
+                    right = false;
+                    up = true;
+                    bottom = true;
                     break;   
                     
                 case 8:
-                    left=true;
-                    right=false;
-                    up=false;
-                    bottom=true;
+                    left = true;
+                    right = false;
+                    up = false;
+                    bottom = true;
                     break;
                     
                 case 9:
-                    left=true;
-                    right=false;
-                    up=true;
-                    bottom=false;
+                    left = true;
+                    right = false;
+                    up = true;
+                    bottom = false;
                     break;
                     
                 case 10:
-                    left=true;
-                    right=true;
-                    up=false;
-                    bottom=true;
+                    left = true;
+                    right = true;
+                    up = false;
+                    bottom = true;
                     break; 
                     
                 case 11:
-                    left=false;
-                    right=true;
-                    up=true;
-                    bottom=true;
+                    left = false;
+                    right = true;
+                    up = true;
+                    bottom = true;
                     break;   
                     
                 case 12:
-                    left=true;
-                    right=false;
-                    up=true;
-                    bottom=true;
+                    left = true;
+                    right = false;
+                    up = true;
+                    bottom = true;
                     break;
                     
                 case 13:
-                    left=true;
-                    right=true;
-                    up=true;
-                    bottom=false;
+                    left = true;
+                    right = true;
+                    up = true;
+                    bottom = false;
                     break;
                     
                 case 14:
-                    left=true;
-                    right=true;
-                    up=true;
-                    bottom=true;
+                    left = true;
+                    right = true;
+                    up = true;
+                    bottom = true;
                     break;    
             }
             break;
@@ -297,7 +318,6 @@ void Shapes::checkRules(){
 
 GLuint Shapes::loadBMP ( string imagepath )
 {
-    //imagepath="/home/harjot/NetBeansProjects/Final/dist/Debug/GNU-Linux-x86/"+imagepath;
     //When you create your texture files, please specify
     //type: BMP
     //color depth: 24-bit

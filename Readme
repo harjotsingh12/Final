@@ -1,1 +1,0 @@
-Run 'make' and then run 'export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH' to link the Fmod shared library.
